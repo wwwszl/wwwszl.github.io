@@ -83,15 +83,18 @@
 
 
 
+<meta name="description" content="考点一:变量类型和计算 1.JS使用typeof能得到哪些类型？   答案：undefined, string, number, boolean, object, function(null返回的是 object)，symbol(ES6) 2.何时使用===何时使用==:   答案：建议都使用 ===，考虑到以下因素：1.一致性；2.简单和性能：===是最简单的操作符，因为它不用进行类型转换，而=">
 <meta name="keywords" content="JS面试题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS面试题">
+<meta property="og:title" content="变量类型和计算">
 <meta property="og:url" content="zhaolong.online/2019/03/30/JS面试题/index.html">
 <meta property="og:site_name" content="赵龙的个人博客">
+<meta property="og:description" content="考点一:变量类型和计算 1.JS使用typeof能得到哪些类型？   答案：undefined, string, number, boolean, object, function(null返回的是 object)，symbol(ES6) 2.何时使用===何时使用==:   答案：建议都使用 ===，考虑到以下因素：1.一致性；2.简单和性能：===是最简单的操作符，因为它不用进行类型转换，而=">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-30T15:44:16.648Z">
+<meta property="og:updated_time" content="2019-03-30T16:04:26.678Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS面试题">
+<meta name="twitter:title" content="变量类型和计算">
+<meta name="twitter:description" content="考点一:变量类型和计算 1.JS使用typeof能得到哪些类型？   答案：undefined, string, number, boolean, object, function(null返回的是 object)，symbol(ES6) 2.何时使用===何时使用==:   答案：建议都使用 ===，考虑到以下因素：1.一致性；2.简单和性能：===是最简单的操作符，因为它不用进行类型转换，而=">
 
 
 
@@ -127,7 +130,7 @@
 
 
 
-  <title>JS面试题 | 赵龙的个人博客</title>
+  <title>变量类型和计算 | 赵龙的个人博客</title>
   
 
 
@@ -291,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JS面试题</h1>
+          <h1 class="post-title" itemprop="name headline">变量类型和计算</h1>
         
 
         <div class="post-meta">
@@ -321,7 +324,7 @@
 
           
           
-             <span id="/2019/03/30/JS面试题/" class="leancloud_visitors" data-flag-title="JS面试题">
+             <span id="/2019/03/30/JS面试题/" class="leancloud_visitors" data-flag-title="变量类型和计算">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -352,7 +355,41 @@
       
 
       
-        
+        <p>考点一:变量类型和计算</p>
+<p>1.JS使用typeof能得到哪些类型？</p>
+<p>  答案：undefined, string, number, boolean, object, function(null返回的是 object)，symbol(ES6)</p>
+<p>2.何时使用===何时使用==:</p>
+<p>  答案：建议都使用 ===，考虑到以下因素：1.一致性；2.简单和性能：===是最简单的操作符，因为它不用进行类型转换，而==会进行强制类型转换。而可以使用 == 的两种场景：</p>
+<pre><code>  1.判断对象的属性是否存在:
+
+        var object = {}
+            if(obj.a == null){
+
+            //这里相当于 obj.a == null || obj.a == undefined 的简写形式
+        }
+
+      2.判断函数的参数是否存在：
+
+
+        function fn(a, b){
+        if (b==null){
+
+              //这里相当于b == null || b == undefined 的简写形式
+        }
+    }
+
+
+扩展知识：
+      1.if语句会执行强制类型转换;
+      2.if()返回false的情况：0, null, undefined,NaN,空字符串，false；其他均返回true,空对象和空数组，也是返回true的;
+      3.你知道console.log(1===1===1)的值是什么吗？ false. 理由：1===1 为true， 而true===1不成立，所以返回为false.
+</code></pre><p>3.JS中有哪些内置函数?</p>
+<p>  答案：Number, String,Object，Boolean，Function，Array，Date，RegExp，Error，Symbol（ES6) 【注：Symbol函数前不能使用new命令，否则会报错，Symbol函数可以接受一个字符串作为参数，表示对Symbol实例的描述】;</p>
+<p>4.JS变量按照存储方式区分为哪些类型，并描述其特点？</p>
+<p>  答案：1.️值类型，值类型存储的是值；<br>       2.️引用类型 ，存储的是地址，赋值之后是把原变量的引用地址赋值给新变量。</p>
+<p>5.如何理解JSON？</p>
+<p>  答案：JSON就是一个js对象，有两个方法:<br>       1.JSON.stringify({‘a’:10,’b’:20})<br>    ️   2.JSON.parse（’{‘a’:10,’b’:20}’),JSON.parse 不兼容，可以使用eval来转化。</p>
+
       
     </div>
     
