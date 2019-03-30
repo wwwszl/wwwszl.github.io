@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>赵龙的个人博客</title>
   
-  
+  <subtitle>Learn something of everything</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="zhaolong.online/"/>
   <updated>2019-03-30T10:22:29.899Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>zhaolong.online/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>ZHAO Long</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2019/03/30/hello-world/"/>
-    <id>http://yoursite.com/2019/03/30/hello-world/</id>
+    <link href="zhaolong.online/2019/03/30/hello-world/"/>
+    <id>zhaolong.online/2019/03/30/hello-world/</id>
     <published>2019-03-30T10:22:29.898Z</published>
     <updated>2019-03-30T10:22:29.899Z</updated>
     
