@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="1.如何准确判断一个变量是否为数组类型?   答案： var arr=[] ; console.log(arr instanceof Array); //true 2.写一个原型链继承的例子?   答案：封装DOM查询： //定义构造函数Elem，属性封装成id function Elem(id){    this.elem = document.getElementById(id)  } Ele">
+<meta name="description" content="####1. 如何准确判断一个变量是否为数组类型?   答案：  12var arr=[];console.log(arr instanceof Array);//true ####2. 写一个原型链继承的例子?   答案：封装DOM查询：   12345678910111213141516171819202122232425262728293031323334//定义构造函数Elem，属性封装成">
 <meta name="keywords" content="JS面试题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="原型和原型链">
 <meta property="og:url" content="zhaolong.online/2019/03/31/JS面试题2/index.html">
 <meta property="og:site_name" content="赵龙的个人博客">
-<meta property="og:description" content="1.如何准确判断一个变量是否为数组类型?   答案： var arr=[] ; console.log(arr instanceof Array); //true 2.写一个原型链继承的例子?   答案：封装DOM查询： //定义构造函数Elem，属性封装成id function Elem(id){    this.elem = document.getElementById(id)  } Ele">
+<meta property="og:description" content="####1. 如何准确判断一个变量是否为数组类型?   答案：  12var arr=[];console.log(arr instanceof Array);//true ####2. 写一个原型链继承的例子?   答案：封装DOM查询：   12345678910111213141516171819202122232425262728293031323334//定义构造函数Elem，属性封装成">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-30T16:52:58.552Z">
+<meta property="og:updated_time" content="2019-03-31T07:50:57.434Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型和原型链">
-<meta name="twitter:description" content="1.如何准确判断一个变量是否为数组类型?   答案： var arr=[] ; console.log(arr instanceof Array); //true 2.写一个原型链继承的例子?   答案：封装DOM查询： //定义构造函数Elem，属性封装成id function Elem(id){    this.elem = document.getElementById(id)  } Ele">
+<meta name="twitter:description" content="####1. 如何准确判断一个变量是否为数组类型?   答案：  12var arr=[];console.log(arr instanceof Array);//true ####2. 写一个原型链继承的例子?   答案：封装DOM查询：   12345678910111213141516171819202122232425262728293031323334//定义构造函数Elem，属性封装成">
 
 
 
@@ -355,87 +355,33 @@
       
 
       
-        <p>1.如何准确判断一个变量是否为数组类型?</p>
-<p>  答案：</p>
-<pre><code>var arr=[] ;
-console.log(arr instanceof Array); //true
-</code></pre><p>2.写一个原型链继承的例子?</p>
+        <p>####1. 如何准确判断一个变量是否为数组类型?</p>
+<p>  答案：<br>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=[];</span><br><span class="line"><span class="built_in">console</span>.log(arr <span class="keyword">instanceof</span> <span class="built_in">Array</span>);<span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
+<p>####2. 写一个原型链继承的例子?</p>
 <p>  答案：封装DOM查询：</p>
-<pre><code>//定义构造函数Elem，属性封装成id
-function Elem(id){
-
-  this.elem = document.getElementById(id)
-
-}
-Elem.prototype.html = function(val){
-
-  if(val){//如果传了val参数的话执行：
-
-    elem.innerHTML = val;
-
-    return this //以便实现后来的链式操作
-
-  }else{
-
-    return elem.innerHTML //如果没有传，就返回这个elem原来的innerHTML属性值。
-  }
-}
-Elem.prototype.on = function(type,fn){
-
-  var elem = this.elem;
-
-  //监听事件，type为事件类型，fn为回调函数
-  elem.addEventListener(type,fn){
-
-  return this
-
-  }
-}
-
-var div1 = new Elem(&apos;div1&apos;);
-
-div1.html(&apos;&lt;p&gt;hello&lt;/p&gt;&apos;).on(&apos;click&apos;,function(){alert(&apos;clicked&apos;)}).html(&apos;&lt;p&gt;javascript&lt;/p&gt;&apos;)
-</code></pre><p>3.描述new一个对象的过程：</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义构造函数Elem，属性封装成id</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Elem</span>(<span class="params">id</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.elem = <span class="built_in">document</span>.getElementById(id)</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  Elem.prototype.html = <span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(val)&#123;<span class="comment">//如果传了val参数的话执行：</span></span><br><span class="line"></span><br><span class="line">      elem.innerHTML = val;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span> <span class="comment">//以便实现后来的链式操作</span></span><br><span class="line"></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> elem.innerHTML <span class="comment">//如果没有传，就返回这个elem原来的innerHTML属性值。</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  Elem.prototype.on = <span class="function"><span class="keyword">function</span>(<span class="params">type,fn</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> elem = <span class="keyword">this</span>.elem;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//监听事件，type为事件类型，fn为回调函数</span></span><br><span class="line">    elem.addEventListener(type,fn)&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> div1 = <span class="keyword">new</span> Elem(<span class="string">'div1'</span>);</span><br><span class="line"></span><br><span class="line">  div1.html(<span class="string">'&lt;p&gt;hello&lt;/p&gt;'</span>).on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="string">'clicked'</span>)&#125;).html(<span class="string">'&lt;p&gt;javascript&lt;/p&gt;'</span>)</span><br></pre></td></tr></table></figure>
+<p>####3. 描述new一个对象的过程：</p>
 <p>  答案：创建一个新对象，this指向这个新对象，执行代码对this赋值，返回this；</p>
-<pre><code>function Foo(name,age){
-
-      this.name = name;
-      this.age = age;
-      this.class = ‘class-1’
-      return this //这行不用写，默认就有；
-  }
-  var f = new Foo(‘zhangsan’,22);
-</code></pre><p>4.zepto(或其他框架)源码中如何使用原型链？</p>
+<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">	<span class="keyword">this</span>.class = <span class="string">'class-1'</span></span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span> <span class="comment">//这行不用写，默认就有；</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> f = <span class="keyword">new</span> Foo(‘zhangsan’,<span class="number">22</span>);</span><br></pre></td></tr></table></figure>
+</code></pre><p>####4. zepto(或其他框架)源码中如何使用原型链？</p>
 <p>  答案： (还没看，只能先补充一些基础的知识点)</p>
-<pre><code>1.所有的引用类型（数组，对象，函数）都具有对象特性，即可自由扩展属性（除了null）；
-
-      2.所有的引用类型都有一个__proto__属性（隐式原型属性），属性值是一个普通的对象；
-
-3.所有的函数，都有一个prototype（显式原型）属性，属性值也是一个普通的对象；
-
-4.所有的引用类型，__proto__ 属性值（隐式原型属性指向构造它的构造函数的prototype属性值），当试图得到一个对象的某个属性时，如果这个对象本身没有这个属性，那么就会去它的__proto__（即它的构造函数的prototype（显式原型）中寻找.
-
-5.通过对象的属性的形式来执行函数的时候，无论这函数式自身的属性还是从原型中得到的属性，this永远指向f本身，没有指向函数，故执行f.alertName()时，alert(this.name)中的this就是f。
-
-      6.循环对象自身的属性时，可以通过hasOwnProperty 来验证遍历中的item是否为f自身的属性，例如下：
-
-            var item
-            for(item in f){
-
-                if (f.hasOwnProperty(item)){ console.log(item)}
-
-        //高级浏览器已经在for in中屏蔽了来自原型的属性，但我们还是建议加上这个判断，来保证程序的健壮性。
-
-        }
-</code></pre><ol start="5">
-<li><p>instanceof 用来判断引用类型属于哪个构造函数的方法？</p>
-<p>答案：给出例子：</p>
-<p>   var f = new Foo(‘zhangsan’)</p>
-<p>   此时，f instanceof Foo 的判断逻辑就是；f 是Foo new出来的一个类型，判断方式其实是：f的隐式原型（.<strong>proto</strong>）一层一层往上，看能否对应到Foo.prototype(显式原型)</p>
-<p>   注意：Object.prototype的隐式原型是null（JS为了避免死循环）</p>
+<ol>
+<li>所有的引用类型（数组，对象，函数）都具有对象特性，即可自由扩展属性（除了null）；</li>
+<li>所有的引用类型都有一个<strong>proto</strong>属性（隐式原型属性），属性值是一个普通的对象；</li>
+<li>所有的函数，都有一个prototype（显式原型）属性，属性值也是一个普通的对象；</li>
+<li>所有的引用类型，<strong>proto</strong> 属性值（隐式原型属性指向构造它的构造函数的prototype属性值），当试图得到一个对象的某个属性时，如果这个对象本身没有这个属性，那么就会去它的<strong>proto</strong>（即它的构造函数的prototype（显式原型）中寻找.</li>
+<li>通过对象的属性的形式来执行函数的时候，无论这函数式自身的属性还是从原型中得到的属性，this永远指向f本身，没有指向函数，故执行f.alertName()时，alert(this.name)中的this就是f。</li>
+<li>循环对象自身的属性时，可以通过hasOwnProperty 来验证遍历中的item是否为f自身的属性，例如下： <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> item</span><br><span class="line"><span class="keyword">for</span>(item <span class="keyword">in</span> f)&#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> (f.hasOwnProperty(item))&#123; <span class="built_in">console</span>.log(item)&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//高级浏览器已经在for in中屏蔽了来自原型的属性，但我们还是建议加上这个判断，来保证程序的健壮性。</span></span><br><span class="line"></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+<p>####5. instanceof 用来判断引用类型属于哪个构造函数的方法？</p>
+<p>  答案：给出例子：</p>
+<pre><code>`var f = new Foo(‘zhangsan’)`
 
+此时，f instanceof Foo 的判断逻辑就是；f 是Foo new出来的一个类型，判断方式其实是：f的隐式原型（.__proto__）一层一层往上，看能否对应到Foo.prototype(显式原型)
+
+注意：Object.prototype的隐式原型是null（JS为了避免死循环）
+</code></pre>
       
     </div>
     
