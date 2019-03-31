@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="zhaolong.online/"/>
-  <updated>2019-03-31T07:07:53.928Z</updated>
+  <updated>2019-03-31T07:17:00.225Z</updated>
   <id>zhaolong.online/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="zhaolong.online/2019/03/31/markdown%E8%AF%AD%E6%B3%95/"/>
-    <id>zhaolong.online/2019/03/31/markdown语法/</id>
-    <published>2019-03-31T06:14:39.700Z</published>
-    <updated>2019-03-31T07:07:53.928Z</updated>
+    <title>markdown语法概括</title>
+    <link href="zhaolong.online/2019/03/31/markdown%E8%AF%AD%E6%B3%95%E6%A6%82%E6%8B%AC/"/>
+    <id>zhaolong.online/2019/03/31/markdown语法概括/</id>
+    <published>2019-03-31T07:16:34.000Z</published>
+    <updated>2019-03-31T07:17:00.225Z</updated>
     
     <content type="html"><![CDATA[<p>##markdown 常用语法概括</p><p>###1. 标题</p><p>####所用符号：’#’, # -&gt; ###### 共六级，任君自选；</p><p>###2. 引用</p><p>####所用符号：’#’, &gt; -&gt;  &gt;&gt;&gt;&gt;&gt;</p><p>###3. 强调</p><p>####所用符号：’*’ or ‘_’, 任选其一！</p><p>####基本用法： 1个*或_表斜体，2个表加粗，3个表斜体+加粗,可与删除效果叠加</p><p>####删除文本：<del>文本中线</del> ，用’~~’符号</p><p>###4. 列表</p><p>####（1）无序列表</p><p>####所用符号： ‘-‘ or ‘*’ or ‘+’，任选其一！</p><p>####基本语法：</p><pre><code>- 海鲜  - 海鲈鱼    - 鱼头</code></pre><p>####（2) 有序列表</p><p>####所用符号: 数字+英文句点符号</p><p>####基本用法:</p><ol><li>北京</li><li>上海</li><li>深圳</li><li>杭州</li></ol><p>###5. 分割线</p><p>####所用符号: 3个及以上的’*’ or ‘-‘ or ‘_’</p><p>###6. 代码</p><p>####所用符号: <code>用来包裹添加行内代码的区域 | ``</code>用来包裹添加多行代码</p><p>###7. 链接</p><p>####(1) 行内式链接</p><p>####基本用法:<br>      <a href="https://www.baidu.com" target="_blank" rel="noopener">baidu</a></p><p>####(2) 参考式链接</p><p>####基本用法:<br>            [baidu][url]<br>            [url]:<a href="https://baidu.com/" target="_blank" rel="noopener">https://baidu.com/</a></p><p>####（3）自动链接</p><p>###基本用法: <a href="https://www.baidu.com/" target="_blank" rel="noopener">https://www.baidu.com/</a></p><p>###8. 图片</p><p>####(1) 行内式插入图片</p><p>####基本用法：![图片描述](http://链接)</p><p>####(2) 参考式插入图片</p><p>####基本用法：![图片描述][image]<br>            [image]:http://链接</p>]]></content>
     
