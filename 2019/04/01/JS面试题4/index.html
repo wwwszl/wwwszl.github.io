@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="赵龙的个人博客">
 <meta property="og:description" content="####考点4:异步和单线程 #####1. 同步和异步的区别是什么？分别举一个同步和异步的例子。答案：1. 同步会阻塞代码运行，而异步不会；2.alert是同步，setTimeout是异步； #####2. 前端使用异步的场景有哪些？答案：1. 事件绑定；2.网络请求：ajax 以及动态图片加载；3.定时任务：setTimeout，setInterval ####考点5:JS Web API #">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-01T09:03:24.176Z">
+<meta property="og:updated_time" content="2019-04-01T13:47:36.655Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS面试题4">
 <meta name="twitter:description" content="####考点4:异步和单线程 #####1. 同步和异步的区别是什么？分别举一个同步和异步的例子。答案：1. 同步会阻塞代码运行，而异步不会；2.alert是同步，setTimeout是异步； #####2. 前端使用异步的场景有哪些？答案：1. 事件绑定；2.网络请求：ajax 以及动态图片加载；3.定时任务：setTimeout，setInterval ####考点5:JS Web API #">
@@ -364,7 +364,75 @@
 <p>#####3. DOM操作的常用API有哪些？<br>答案：1. 获取DOM节点，以及节点的property和attribute；</p>
 <pre><code>2. 获取父节点，获取子节点；
 3. 新增节点，删除节点removeChild；
-</code></pre>
+</code></pre><p>#####4. DOM节点的attr和property有何区别？<br>答案：修改property是对一个js对象的属性的修改，而修改attribute是对html标签属性的修改。</p>
+<p>#####补充知识点：</p>
+<ol>
+<li>appendChild 除了可以增加新的子节点以外，还可以移动已有的节点，insertBefore也是这样的。</li>
+<li><p>BOM：Browser Object Model浏览器对象模型（很少会问），了解:</p>
+<p> 1）navigator.userAgent可以获取浏览器的类型 &amp;screen.width/height获取显示屏幕的尺寸；</p>
+<p> 2）拆解url的各个部分：scheme://host:port/path?query#fragment:</p>
+<p>（1）.scheme:通信协议，常用的http,ftp,maito等。</p>
+<p>（2）.host:主机，服务器(计算机)域名系统 (DNS) 主机名或 IP 地址。</p>
+<p>（3）.port:端口号，整数，可选，省略时使用方案的默认端口，如http的默认端口为80。</p>
+<p>（4）.path:路径，由零或多个”/“符号隔开的字符串，一般用来表示主机上的一个目录或文件地址。</p>
+<p>（5）.query:查询，可选，用于给动态网页（如使用CGI、ISAPI、PHP/JSP/ASP/ASP.NET等技术制作的网页）传递参数，可有多个参数，用”\&amp;”符号隔开，每个参数的名和值用”=”符号隔开。</p>
+<p>（6）.fragment:信息片断，字符串，用于指定网络资源中的片断。例如一个网页中有多个名词解释，可使用fragment直接定位到某一名词解释。(也称为锚点)</p>
+<p>(该部分参考了:<br> [url]：<a href="https://blog.csdn.net/singlepepper/article/details/50981743" target="_blank" rel="noopener">https://blog.csdn.net/singlepepper/article/details/50981743</a><br>)</p>
+</li>
+</ol>
+<h4 id="考点6-事件及事件绑定"><a href="#考点6-事件及事件绑定" class="headerlink" title="考点6:事件及事件绑定"></a>考点6:事件及事件绑定</h4><h5 id="1-编写一个通用的事件监听函数"><a href="#1-编写一个通用的事件监听函数" class="headerlink" title="1. 编写一个通用的事件监听函数"></a>1. 编写一个通用的事件监听函数</h5><p>答案：</p>
+<ol>
+<li><p>平时的事件监听函数是怎样的：</p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div1 = <span class="built_in">document</span>.getElementById(<span class="string">'div1'</span>);</span><br><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params">type,fun</span>)</span>&#123;<span class="comment">//传入事件类型和函数</span></span><br><span class="line"></span><br><span class="line">  div1.addEventListener(type,fun)</span><br><span class="line">&#125;</span><br><span class="line">fn(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert(<span class="string">'hello!'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>加入代理的情况：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bindEvent</span>(<span class="params">elem,type,selector,fn</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(fn == <span class="literal">null</span>)&#123;</span><br><span class="line">    fn = selector;</span><br><span class="line">    selector = <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  elem.addEventListener(type,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(selector)&#123;</span><br><span class="line">      <span class="comment">//代理</span></span><br><span class="line">        <span class="keyword">var</span> target;</span><br><span class="line">        <span class="keyword">if</span>（target.matches(selector))&#123;</span><br><span class="line">          target = e.target;</span><br><span class="line">          fn.call(target,e)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="comment">//不是代理</span></span><br><span class="line">      fn(e)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="2-简述事件冒泡的事件："><a href="#2-简述事件冒泡的事件：" class="headerlink" title="2. 简述事件冒泡的事件："></a>2. 简述事件冒泡的事件：</h5><p>答案：</p>
+<ol>
+<li>DOM树形结构；</li>
+<li>事件冒泡；</li>
+<li>阻止冒泡// e.preventDefault();</li>
+<li>冒泡的应用</li>
+</ol>
+<p>#####3. 给无限下拉加载图片的页面绑定事件<br>答案：</p>
+<ol>
+<li>使用代理；</li>
+<li>简述代理的两个优点：1. 代码简洁，方便； 2. 给浏览器压力比较小。</li>
+</ol>
+<h5 id="4-手写Ajax，不依赖第三方库"><a href="#4-手写Ajax，不依赖第三方库" class="headerlink" title="4. 手写Ajax，不依赖第三方库"></a>4. 手写Ajax，不依赖第三方库</h5><h6 id="1-简单版"><a href="#1-简单版" class="headerlink" title="1. 简单版"></a>1. 简单版</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr  = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">'GET'</span>,url,<span class="literal">false</span>);</span><br><span class="line"><span class="comment">//第三个参数决定是同步还是异步，true为异步，false为同步，true是在等待服务器响应时执行其他脚本，当响应就绪后对响应进行处理；而false是等待服务器响应再执行；</span></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span> || xhr.status==<span class="number">304</span>)&#123;</span><br><span class="line">    alert(xhr.responseText);</span><br><span class="line">  &#125;</span><br><span class="line">xhr.send(<span class="literal">null</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="2-完整版"><a href="#2-完整版" class="headerlink" title="2. 完整版"></a>2. 完整版</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Ajax&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">get</span>: function(url,fn)&#123;</span><br><span class="line">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    xhr.open(<span class="string">'GET'</span>,url,<span class="literal">true</span>);<span class="comment">//实际应用下必须使用异步，否则会阻塞网站其他脚本运行</span></span><br><span class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">//onreadystatechange是存有处理服务器响应的函数，每当readyState改变时，这个函数就会被执行</span></span><br><span class="line">      <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status==<span class="number">200</span> || xhr.status == <span class="number">304</span>)&#123;</span><br><span class="line">        <span class="comment">//状态码一般只需要知道4是请求完成并且响应已就绪即可</span></span><br><span class="line">        fn.call(<span class="keyword">this</span>,xhr.responseText);<span class="comment">//responseText是字符串形式的相应数据。</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  xhr.send();<span class="comment">//将请求发至服务器</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//以上为get方法</span></span><br><span class="line"></span><br><span class="line">  post:<span class="function"><span class="keyword">function</span>(<span class="params">url,data,fn</span>)</span>&#123;<span class="comment">//data应为'a=a1&amp;b=b1'这种字符串格式，在jq里如果data为对象会自动将对象转为这种字符串格式</span></span><br><span class="line">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    xhr.open(<span class="string">'POST'</span>,url,<span class="literal">true</span>);</span><br><span class="line">    <span class="comment">//添加http头，发送信息至服务器时内容编码类型</span></span><br><span class="line">    xhr.setRequestHeader(<span class="string">'Content-Type'</span>,<span class="string">'application/x-www-form-urlencoded'</span>);</span><br><span class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span> || xhr.status == <span class="number">304</span>)&#123;</span><br><span class="line">        fn.call(<span class="keyword">this</span>,xhr.responseText);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">    xhr.send(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>get和post方法的区别：</p>
+<ol>
+<li>GET更简单更快，大部分情况下都可以使用；</li>
+<li><p>以下情况下需要使用POST：</p>
+<p> 1） 更新服务器上的文件或数据库；<br> 2） 向服务器发送大量数据（POST没有数据量限制）；<br> 3） 发送包含未知字符的用户输入；</p>
+</li>
+<li><p>POST传数据时，需要setRequestHeader方法来添加HTTP头；而GET发送信息时，直接加参数到url上就可以，比如:url?a=a1&amp;b=b1</p>
+</li>
+</ol>
+<h5 id="5-Ajax跨域"><a href="#5-Ajax跨域" class="headerlink" title="5. Ajax跨域"></a>5. Ajax跨域</h5><h6 id="1-什么是跨域"><a href="#1-什么是跨域" class="headerlink" title="1. 什么是跨域"></a>1. 什么是跨域</h6><p>答案：</p>
+<ol>
+<li>原因：浏览器有同源策略，不允许ajax访问其他域接口；</li>
+<li>条件：协议、域名、端口，有一个不同就算跨域；</li>
+<li><p>可以跨域加载资源的三个标签：</p>
+<p>1）img(如果进行了防盗链处理，也无法跨域)：用于打点统计，统计网站可以是其他域；<br>2）link，script可以使用CDN；<br>3) script可以用于JSONP；</p>
+</li>
+</ol>
+<h6 id="2-JSONP"><a href="#2-JSONP" class="headerlink" title="2. JSONP"></a>2. JSONP</h6><p>答案：</p>
+<ol>
+<li>服务器可以根据请求动态生成一个文件返回给你.</li>
+</ol>
+<h6 id="3-服务器端设置-http-header来解决跨域问题（了解即可）"><a href="#3-服务器端设置-http-header来解决跨域问题（了解即可）" class="headerlink" title="3. 服务器端设置 http header来解决跨域问题（了解即可）"></a>3. 服务器端设置 http header来解决跨域问题（了解即可）</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第二个参数设置允许跨域的域名称，不建议直接写‘*’</span></span><br><span class="line">response.setHeader(<span class="string">"Access-Control-Allow-Origin"</span>,<span class="string">'http://a.com,http://b.com'</span>);</span><br><span class="line">response.setHeader(<span class="string">"Access-Control-Allow-Headers"</span>,<span class="string">'X-Requested-With'</span>);</span><br><span class="line">response.setHeader(<span class="string">"Access-Control-Allow-Methods"</span>,<span class="string">'PUT,POST,GET,DELETE,OPTIONS'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//接收跨域的cookie:</span></span><br><span class="line">resonse.setHeader(<span class="string">"Access-Control-Allow-Credentials"</span>,<span class="string">'true'</span>);</span><br></pre></td></tr></table></figure>
+<h5 id="6-本地存储方式"><a href="#6-本地存储方式" class="headerlink" title="6. 本地存储方式"></a>6. 本地存储方式</h5><p>答案：</p>
+<ol>
+<li>老方法： cookie(本身用于客户端和服务器端通信，但有本地存储的功能)；<br>缺点： 存储量太小，只有4KB;所有http请求都带着，会影响获取资源的效率；</li>
+<li>新方法： SessionStorage，LocalStorage（HTML5专门为存储而设计，最大容量为5M；API简单易用（两者相同）；localStorage.setItem(key,value);localStorage.getItem(key)）；</li>
+<li><strong>区别</strong>： L是一直存储在本地，而S是关掉浏览器就没了；</li>
+<li>注意：ios sarafi隐藏模式下如果调用L和S的API会报错，所以建议用try-catch。</li>
+</ol>
+
       
     </div>
     
@@ -487,8 +555,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -568,6 +645,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#考点6-事件及事件绑定"><span class="nav-number">1.</span> <span class="nav-text">考点6:事件及事件绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-编写一个通用的事件监听函数"><span class="nav-number">1.1.</span> <span class="nav-text">1. 编写一个通用的事件监听函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-简述事件冒泡的事件："><span class="nav-number">1.2.</span> <span class="nav-text">2. 简述事件冒泡的事件：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-手写Ajax，不依赖第三方库"><span class="nav-number">1.3.</span> <span class="nav-text">4. 手写Ajax，不依赖第三方库</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-简单版"><span class="nav-number">1.3.1.</span> <span class="nav-text">1. 简单版</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-完整版"><span class="nav-number">1.3.2.</span> <span class="nav-text">2. 完整版</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-Ajax跨域"><span class="nav-number">1.4.</span> <span class="nav-text">5. Ajax跨域</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-什么是跨域"><span class="nav-number">1.4.1.</span> <span class="nav-text">1. 什么是跨域</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-JSONP"><span class="nav-number">1.4.2.</span> <span class="nav-text">2. JSONP</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-服务器端设置-http-header来解决跨域问题（了解即可）"><span class="nav-number">1.4.3.</span> <span class="nav-text">3. 服务器端设置 http header来解决跨域问题（了解即可）</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-本地存储方式"><span class="nav-number">1.5.</span> <span class="nav-text">6. 本地存储方式</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
