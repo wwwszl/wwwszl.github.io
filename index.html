@@ -273,6 +273,177 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="zhaolong.online/2019/04/02/JS面试题5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZHAO LONG">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="赵龙的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/02/JS面试题5/" itemprop="url">JS面试题5</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-02T20:04:09+08:00">
+                2019-04-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/04/02/JS面试题5/" class="leancloud_visitors" data-flag-title="JS面试题5">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="考点7-浏览器页面加载、性能优化和安全性"><a href="#考点7-浏览器页面加载、性能优化和安全性" class="headerlink" title="考点7:浏览器页面加载、性能优化和安全性"></a>考点7:浏览器页面加载、性能优化和安全性</h4><h5 id="1-从输入url到得到html的详细过程："><a href="#1-从输入url到得到html的详细过程：" class="headerlink" title="1. 从输入url到得到html的详细过程："></a>1. 从输入url到得到html的详细过程：</h5><p>答案：<br>（简洁版）</p>
+<ol>
+<li>浏览器根据DNS服务器得到域名的IP地址；（应用层：DNS解析）</li>
+<li>向这个IP的机器发送http请求；（应用层：生成HTTP请求报文；传输层：TCP三次握手）</li>
+<li>服务器收到、处理并返回http请求；（网络层：使用IP协议选择路线；数据链路层：将数据包packet封装为帧（加帧头帧尾）；物理层：将帧转化为电子、光学或微波信号传输数据）</li>
+<li>浏览器得到返回内容；（这里接收数据也经历了物理层、数据链路层、网络层、传输层和应用层的解封和解包。）</li>
+<li>浏览器进行资源加载（loader模块有两条资源加载路径：1.主资源，index.html；2.派生资源，即index.html文件中所用到的资源； parser模块先解析主资源内容，生成派生资源对应的DOM结构，然后根据需求触发派生资源的加载流程，比如遇到image的起始标签，会创建相应的image元素HTMLImageElement，接着依据img标签的内容设置HTMLImageElement的属性。在设置src属性时，会触发图片资源加载，发起加载资源的请求。【此处常见优化点是：对派生资源使用缓存】经过parser模块的处理，浏览器把页面文本转换成了一颗节点带CSS Style、会响应自定义事件的Styled DOM树；接着是DOM树 ——&gt; Render树(用来表示文档的可视信息) –&gt;Render Layer树 ; HTML采用流式布局模型，按照从左到右、从上至下的顺序来遍历页面元素，然后依照一定的顺序绘制页面。）</li>
+</ol>
+<p>（具体请参考 [小火柴的博客][url]:<a href="https://www.cnblogs.com/xiaohuochai/p/9193083.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiaohuochai/p/9193083.html</a>, 非常详细。）</p>
+<h5 id="2-window-onload-和-DOMContentLoaded的区别？"><a href="#2-window-onload-和-DOMContentLoaded的区别？" class="headerlink" title="2. window.onload 和 DOMContentLoaded的区别？"></a>2. window.onload 和 DOMContentLoaded的区别？</h5><p>答案：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'load'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">// 等同于window.onload,要等页面的全部资源加载完才会执行，包括图片、视频等；</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'DOMContentLoaded'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//DOM渲染完即可执行，无需等图片和视频全部加载完。</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>jQuery和其他框架通常都采用后者；</p>
+<h5 id="3-页面加载的优化？"><a href="#3-页面加载的优化？" class="headerlink" title="3. 页面加载的优化？"></a>3. 页面加载的优化？</h5><p>答案：</p>
+<ol>
+<li><p>加载资源的优化：<br>a. 静态资源的压缩合并（比如js文件打包压缩；<br>b. 静态资源的缓存；(JS文件缓存在本地，发新版时才需要重新获取)<br>c. 使用CDN让资源加载更快；<br>d. 使用SSR后端渲染，数据直接输出到HTML中；</p>
+</li>
+<li><p>渲染优化：<br>a. CSS放在head中，JS放在body最下方；<br>b. 懒加载（图片懒加载、下拉加载更多）；<br>c. 减少DOM查询，对DOM查询做缓存；<br>d. 减少DOM操作，多个操作尽量合并在一起执行；<br>e. 事件节流；<br>f. 尽早执行操作（如DOMContentLoaded）</p>
+</li>
+<li><p>具体示例：</p>
+<ol>
+<li><p>懒加载</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;img id=<span class="string">'img1'</span> src = <span class="string">'preview.png'</span> data-realsrc = <span class="string">'abc.png'</span>/&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> img1 = <span class="built_in">document</span>.getElementById(<span class="string">'img1'</span>);</span><br><span class="line">    img1.src = img1.getAttribute(<span class="string">'data-realsrc'</span>)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>合并DOM插入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> listNode = <span class="built_in">document</span>.getElementById(<span class="string">'list'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//要插入10个li标签</span></span><br><span class="line"><span class="comment">//用createDocumentFragment方法,在插入10个标签的过程中不会改变dom树。</span></span><br><span class="line"><span class="keyword">var</span> frag = <span class="built_in">document</span>.createDocumentFragment();</span><br><span class="line"><span class="keyword">var</span> x,li;</span><br><span class="line"><span class="keyword">for</span> (x=<span class="number">0</span>;x&lt;<span class="number">10</span>;x++)&#123;</span><br><span class="line">  li = <span class="built_in">document</span>.creatElement(<span class="string">'li'</span>);</span><br><span class="line">  li.innerHTML = <span class="string">'List item'</span> + i;</span><br><span class="line">  frag.appendChild(li);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">listNode.appendChild(frag)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>事件节流</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> textarea = <span class="built_in">document</span>.getElementById(<span class="string">'text'</span>);</span><br><span class="line"><span class="keyword">var</span> timeoutId;</span><br><span class="line">textarea.addEventListener(<span class="string">'keyup'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(timeoutId)&#123;</span><br><span class="line">    clearTimeout(timeoutId)</span><br><span class="line">  &#125;</span><br><span class="line">  timeoutId = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="comment">//触发change事件</span></span><br><span class="line">  &#125;,<span class="number">500</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>上面代码描述的是用户输入时的一种情况，如果用户打字很快的话，我们就不需要让频繁输入的内容持续触发一次次函数，此处我们设定了500ms，也就是用户100ms未进行输入的情况下我们就对keyup事件进行响应。</p>
+</li>
+<li><p>缓存dom查询</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pList = <span class="built_in">document</span>.getElementByTagName(<span class="string">'p'</span>);</span><br><span class="line"><span class="keyword">var</span> i;</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span> ; i &lt; pList.length;i++)&#123;</span><br><span class="line">  <span class="comment">//todo</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里我们把获取到的p元素都放在pList这个数组中，避免了后期遍历时再频繁地去进行DOM查询。</p>
+</li>
+</ol>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="zhaolong.online/2019/04/02/css清除浮动的终极奥义/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1644,7 +1815,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="CSS,">
+  <meta name="keywords" content="JS面试题,">
 
 
 
@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="1.基础知识1.BFC（Block Formating Context,块格式化上下文）触发BFC的条件： float除了none以外的值； overflow除了visible以外的值； display（table-cell,table-caption,inline-block） postion(absolute,fixed); fieldset元素  需要注意的点是：display:table">
-<meta name="keywords" content="CSS">
+<meta name="description" content="考点7:浏览器页面加载、性能优化和安全性1. 从输入url到得到html的详细过程：答案：（简洁版）  浏览器根据DNS服务器得到域名的IP地址；（应用层：DNS解析） 向这个IP的机器发送http请求；（应用层：生成HTTP请求报文；传输层：TCP三次握手） 服务器收到、处理并返回http请求；（网络层：使用IP协议选择路线；数据链路层：将数据包packet封装为帧（加帧头帧尾）；物理层：将帧转">
+<meta name="keywords" content="JS面试题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css清除浮动的终极奥义">
-<meta property="og:url" content="zhaolong.online/2019/04/02/css清除浮动的终极奥义/index.html">
+<meta property="og:title" content="JS面试题5">
+<meta property="og:url" content="zhaolong.online/2019/04/02/JS面试题5/index.html">
 <meta property="og:site_name" content="赵龙的个人博客">
-<meta property="og:description" content="1.基础知识1.BFC（Block Formating Context,块格式化上下文）触发BFC的条件： float除了none以外的值； overflow除了visible以外的值； display（table-cell,table-caption,inline-block） postion(absolute,fixed); fieldset元素  需要注意的点是：display:table">
+<meta property="og:description" content="考点7:浏览器页面加载、性能优化和安全性1. 从输入url到得到html的详细过程：答案：（简洁版）  浏览器根据DNS服务器得到域名的IP地址；（应用层：DNS解析） 向这个IP的机器发送http请求；（应用层：生成HTTP请求报文；传输层：TCP三次握手） 服务器收到、处理并返回http请求；（网络层：使用IP协议选择路线；数据链路层：将数据包packet封装为帧（加帧头帧尾）；物理层：将帧转">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-02T08:45:05.221Z">
+<meta property="og:updated_time" content="2019-04-02T13:23:47.547Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css清除浮动的终极奥义">
-<meta name="twitter:description" content="1.基础知识1.BFC（Block Formating Context,块格式化上下文）触发BFC的条件： float除了none以外的值； overflow除了visible以外的值； display（table-cell,table-caption,inline-block） postion(absolute,fixed); fieldset元素  需要注意的点是：display:table">
+<meta name="twitter:title" content="JS面试题5">
+<meta name="twitter:description" content="考点7:浏览器页面加载、性能优化和安全性1. 从输入url到得到html的详细过程：答案：（简洁版）  浏览器根据DNS服务器得到域名的IP地址；（应用层：DNS解析） 向这个IP的机器发送http请求；（应用层：生成HTTP请求报文；传输层：TCP三次握手） 服务器收到、处理并返回http请求；（网络层：使用IP协议选择路线；数据链路层：将数据包packet封装为帧（加帧头帧尾）；物理层：将帧转">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="zhaolong.online/2019/04/02/css清除浮动的终极奥义/">
+  <link rel="canonical" href="zhaolong.online/2019/04/02/JS面试题5/">
 
 
 
 
 
-  <title>css清除浮动的终极奥义 | 赵龙的个人博客</title>
+  <title>JS面试题5 | 赵龙的个人博客</title>
   
 
 
@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="zhaolong.online/2019/04/02/css清除浮动的终极奥义/">
+    <link itemprop="mainEntityOfPage" href="zhaolong.online/2019/04/02/JS面试题5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZHAO LONG">
@@ -294,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">css清除浮动的终极奥义</h1>
+          <h1 class="post-title" itemprop="name headline">JS面试题5</h1>
         
 
         <div class="post-meta">
@@ -306,7 +306,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-02T11:28:35+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-02T20:04:09+08:00">
                 2019-04-02
               </time>
             
@@ -324,7 +324,7 @@
 
           
           
-             <span id="/2019/04/02/css清除浮动的终极奥义/" class="leancloud_visitors" data-flag-title="css清除浮动的终极奥义">
+             <span id="/2019/04/02/JS面试题5/" class="leancloud_visitors" data-flag-title="JS面试题5">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -355,25 +355,43 @@
       
 
       
-        <h4 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1.基础知识"></a>1.基础知识</h4><h5 id="1-BFC（Block-Formating-Context-块格式化上下文）"><a href="#1-BFC（Block-Formating-Context-块格式化上下文）" class="headerlink" title="1.BFC（Block Formating Context,块格式化上下文）"></a>1.BFC（Block Formating Context,块格式化上下文）</h5><h6 id="触发BFC的条件："><a href="#触发BFC的条件：" class="headerlink" title="触发BFC的条件："></a>触发BFC的条件：</h6><ol>
-<li>float除了none以外的值；</li>
-<li>overflow除了visible以外的值；</li>
-<li>display（table-cell,table-caption,inline-block）</li>
-<li>postion(absolute,fixed);</li>
-<li>fieldset元素</li>
+        <h4 id="考点7-浏览器页面加载、性能优化和安全性"><a href="#考点7-浏览器页面加载、性能优化和安全性" class="headerlink" title="考点7:浏览器页面加载、性能优化和安全性"></a>考点7:浏览器页面加载、性能优化和安全性</h4><h5 id="1-从输入url到得到html的详细过程："><a href="#1-从输入url到得到html的详细过程：" class="headerlink" title="1. 从输入url到得到html的详细过程："></a>1. 从输入url到得到html的详细过程：</h5><p>答案：<br>（简洁版）</p>
+<ol>
+<li>浏览器根据DNS服务器得到域名的IP地址；（应用层：DNS解析）</li>
+<li>向这个IP的机器发送http请求；（应用层：生成HTTP请求报文；传输层：TCP三次握手）</li>
+<li>服务器收到、处理并返回http请求；（网络层：使用IP协议选择路线；数据链路层：将数据包packet封装为帧（加帧头帧尾）；物理层：将帧转化为电子、光学或微波信号传输数据）</li>
+<li>浏览器得到返回内容；（这里接收数据也经历了物理层、数据链路层、网络层、传输层和应用层的解封和解包。）</li>
+<li>浏览器进行资源加载（loader模块有两条资源加载路径：1.主资源，index.html；2.派生资源，即index.html文件中所用到的资源； parser模块先解析主资源内容，生成派生资源对应的DOM结构，然后根据需求触发派生资源的加载流程，比如遇到image的起始标签，会创建相应的image元素HTMLImageElement，接着依据img标签的内容设置HTMLImageElement的属性。在设置src属性时，会触发图片资源加载，发起加载资源的请求。【此处常见优化点是：对派生资源使用缓存】经过parser模块的处理，浏览器把页面文本转换成了一颗节点带CSS Style、会响应自定义事件的Styled DOM树；接着是DOM树 ——&gt; Render树(用来表示文档的可视信息) –&gt;Render Layer树 ; HTML采用流式布局模型，按照从左到右、从上至下的顺序来遍历页面元素，然后依照一定的顺序绘制页面。）</li>
 </ol>
-<h6 id="需要注意的点是：display-table-本身并不会创建BFC，但是它会产生匿名框（块级元素A包含其他块级元素a1时，若此时在a1前插入文本，就会形成块级匿名框，匿名框不可见，且不能设置样式，匿名框只是用来维护dom树结构的），而匿名框中的display-table-cell可以创建新的BFC，换句话说，触发块级格式化上下文的是匿名框，而不是display-table，所以display-table-和-display-table-cell创建的BFC效果是不一样的。"><a href="#需要注意的点是：display-table-本身并不会创建BFC，但是它会产生匿名框（块级元素A包含其他块级元素a1时，若此时在a1前插入文本，就会形成块级匿名框，匿名框不可见，且不能设置样式，匿名框只是用来维护dom树结构的），而匿名框中的display-table-cell可以创建新的BFC，换句话说，触发块级格式化上下文的是匿名框，而不是display-table，所以display-table-和-display-table-cell创建的BFC效果是不一样的。" class="headerlink" title="需要注意的点是：display:table 本身并不会创建BFC，但是它会产生匿名框（块级元素A包含其他块级元素a1时，若此时在a1前插入文本，就会形成块级匿名框，匿名框不可见，且不能设置样式，匿名框只是用来维护dom树结构的），而匿名框中的display:table-cell可以创建新的BFC，换句话说，触发块级格式化上下文的是匿名框，而不是display:table，所以display:table 和 display:table-cell创建的BFC效果是不一样的。"></a>需要注意的点是：display:table 本身并不会创建BFC，但是它会产生匿名框（块级元素A包含其他块级元素a1时，若此时在a1前插入文本，就会形成块级匿名框，匿名框不可见，且不能设置样式，匿名框只是用来维护dom树结构的），而匿名框中的display:table-cell可以创建新的BFC，换句话说，触发块级格式化上下文的是匿名框，而不是display:table，所以display:table 和 display:table-cell创建的BFC效果是不一样的。</h6><h6 id="BFC的特性"><a href="#BFC的特性" class="headerlink" title="BFC的特性"></a>BFC的特性</h6><ol>
-<li>BFC会阻止外边距叠加：<br>当两个相邻的块元素在同一个BFC中时，它们之间垂直方向的外边距会发生叠加。</li>
-<li>BFC不会重叠浮动元素：<br>根据规定，一个BFC的边框不能和它里面的元素的外边距，这就意味着浏览器将会给BFC创建隐式的外边距来阻止它和浮动元素的外边距叠加。因此，想给一个挨着浮动的BFC添加负的外边距将 <strong>不会起作用</strong>。</li>
-<li>BFC通常可以包含浮动。</li>
-</ol>
-<h5 id="2-清除浮动与闭合浮动的区别"><a href="#2-清除浮动与闭合浮动的区别" class="headerlink" title="2.清除浮动与闭合浮动的区别"></a>2.清除浮动与闭合浮动的区别</h5><h6 id="清除浮动：对应的css属性是clear-left-right-both-none"><a href="#清除浮动：对应的css属性是clear-left-right-both-none" class="headerlink" title="清除浮动：对应的css属性是clear:left|right|both|none;"></a>清除浮动：对应的css属性是clear:left|right|both|none;</h6><h6 id="闭合浮动：使浮动元素闭合从而减少浮动带来的影响，一般来说目的是为了解决父元素高度塌陷的问题。"><a href="#闭合浮动：使浮动元素闭合从而减少浮动带来的影响，一般来说目的是为了解决父元素高度塌陷的问题。" class="headerlink" title="闭合浮动：使浮动元素闭合从而减少浮动带来的影响，一般来说目的是为了解决父元素高度塌陷的问题。"></a>闭合浮动：使浮动元素闭合从而减少浮动带来的影响，一般来说目的是为了解决父元素高度塌陷的问题。</h6><h4 id="2-具体实现（只提供两个优秀方案，都与伪元素-after相关）"><a href="#2-具体实现（只提供两个优秀方案，都与伪元素-after相关）" class="headerlink" title="2.具体实现（只提供两个优秀方案，都与伪元素:after相关）"></a>2.具体实现（只提供两个优秀方案，都与伪元素:after相关）</h4><ol>
-<li>：after伪元素闭合浮动<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>:<span class="string">'.'</span>;</span><br><span class="line">  <span class="attribute">display</span>:block;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">0</span>;</span><br><span class="line">  <span class="attribute">visibility</span>:hidden;</span><br><span class="line">  <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*兼容ie*/</span></span><br><span class="line">.clearfix&#123;*zoom:1;&#125;</span><br></pre></td></tr></table></figure>
+<p>（具体请参考 [小火柴的博客][url]:<a href="https://www.cnblogs.com/xiaohuochai/p/9193083.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiaohuochai/p/9193083.html</a>, 非常详细。）</p>
+<h5 id="2-window-onload-和-DOMContentLoaded的区别？"><a href="#2-window-onload-和-DOMContentLoaded的区别？" class="headerlink" title="2. window.onload 和 DOMContentLoaded的区别？"></a>2. window.onload 和 DOMContentLoaded的区别？</h5><p>答案：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'load'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">// 等同于window.onload,要等页面的全部资源加载完才会执行，包括图片、视频等；</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'DOMContentLoaded'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//DOM渲染完即可执行，无需等图片和视频全部加载完。</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>jQuery和其他框架通常都采用后者；</p>
+<h5 id="3-页面加载的优化？"><a href="#3-页面加载的优化？" class="headerlink" title="3. 页面加载的优化？"></a>3. 页面加载的优化？</h5><p>答案：</p>
+<ol>
+<li><p>加载资源的优化：<br>a. 静态资源的压缩合并（比如js文件打包压缩；<br>b. 静态资源的缓存；(JS文件缓存在本地，发新版时才需要重新获取)<br>c. 使用CDN让资源加载更快；<br>d. 使用SSR后端渲染，数据直接输出到HTML中；</p>
+</li>
+<li><p>渲染优化：<br>a. CSS放在head中，JS放在body最下方；<br>b. 懒加载（图片懒加载、下拉加载更多）；<br>c. 减少DOM查询，对DOM查询做缓存；<br>d. 减少DOM操作，多个操作尽量合并在一起执行；<br>e. 事件节流；<br>f. 尽早执行操作（如DOMContentLoaded）</p>
+</li>
+<li><p>具体示例：</p>
+<ol>
+<li><p>懒加载</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;img id=<span class="string">'img1'</span> src = <span class="string">'preview.png'</span> data-realsrc = <span class="string">'abc.png'</span>/&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> img1 = <span class="built_in">document</span>.getElementById(<span class="string">'img1'</span>);</span><br><span class="line">    img1.src = img1.getAttribute(<span class="string">'data-realsrc'</span>)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>合并DOM插入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> listNode = <span class="built_in">document</span>.getElementById(<span class="string">'list'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//要插入10个li标签</span></span><br><span class="line"><span class="comment">//用createDocumentFragment方法,在插入10个标签的过程中不会改变dom树。</span></span><br><span class="line"><span class="keyword">var</span> frag = <span class="built_in">document</span>.createDocumentFragment();</span><br><span class="line"><span class="keyword">var</span> x,li;</span><br><span class="line"><span class="keyword">for</span> (x=<span class="number">0</span>;x&lt;<span class="number">10</span>;x++)&#123;</span><br><span class="line">  li = <span class="built_in">document</span>.creatElement(<span class="string">'li'</span>);</span><br><span class="line">  li.innerHTML = <span class="string">'List item'</span> + i;</span><br><span class="line">  frag.appendChild(li);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">listNode.appendChild(frag)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>事件节流</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> textarea = <span class="built_in">document</span>.getElementById(<span class="string">'text'</span>);</span><br><span class="line"><span class="keyword">var</span> timeoutId;</span><br><span class="line">textarea.addEventListener(<span class="string">'keyup'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(timeoutId)&#123;</span><br><span class="line">    clearTimeout(timeoutId)</span><br><span class="line">  &#125;</span><br><span class="line">  timeoutId = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="comment">//触发change事件</span></span><br><span class="line">  &#125;,<span class="number">500</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>上面代码描述的是用户输入时的一种情况，如果用户打字很快的话，我们就不需要让频繁输入的内容持续触发一次次函数，此处我们设定了500ms，也就是用户100ms未进行输入的情况下我们就对keyup事件进行响应。</p>
+</li>
+<li><p>缓存dom查询</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pList = <span class="built_in">document</span>.getElementByTagName(<span class="string">'p'</span>);</span><br><span class="line"><span class="keyword">var</span> i;</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span> ; i &lt; pList.length;i++)&#123;</span><br><span class="line">  <span class="comment">//todo</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里我们把获取到的p元素都放在pList这个数组中，避免了后期遍历时再频繁地去进行DOM查询。</p>
 </li>
 </ol>
-<p>display:block 使生成的元素以块级元素显示，占满剩余空间<br>height:0 避免生成内容破坏原有布局的高度；<br>visibility:hidden 使生成的内容不可见，并允许可能被生成元素盖住的内容可以进行点击和交互；<br>content：’.’ 可以是其他内容，但最好是有内容，因为到firefox7.0版本为止若内容为空，火狐浏览器仍然会产生额外的空隙。</p>
-<p>2.同时操作:before和:after<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:before</span>,<span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>:<span class="string">''</span>;</span><br><span class="line">  <span class="attribute">display</span>:table;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">  <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix&#123;*zoom:1&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这种方法不存在上面提到的火狐浏览器空隙的问题，而且:before的加入是用来处理margin边距重叠问题的：我们上面提到过，内部元素float会创建BFC，div1和div2的外边距叠加问题，如果你想解决这个问题，可以加入:before，否则只需要after就够了。</p>
+</li>
+</ol>
 
       
     </div>
@@ -404,7 +422,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
+            <a href="/tags/JS面试题/" rel="tag"><i class="fa fa-tag"></i> JS面试题</a>
           
         </div>
       
@@ -432,8 +450,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/01/JS面试题4/" rel="next" title="JS面试题4">
-                <i class="fa fa-chevron-left"></i> JS面试题4
+              <a href="/2019/04/02/css清除浮动的终极奥义/" rel="next" title="css清除浮动的终极奥义">
+                <i class="fa fa-chevron-left"></i> css清除浮动的终极奥义
               </a>
             
           </div>
@@ -441,10 +459,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/02/JS面试题5/" rel="prev" title="JS面试题5">
-                JS面试题5 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -601,7 +615,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-基础知识"><span class="nav-number">1.</span> <span class="nav-text">1.基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-BFC（Block-Formating-Context-块格式化上下文）"><span class="nav-number">1.1.</span> <span class="nav-text">1.BFC（Block Formating Context,块格式化上下文）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#触发BFC的条件："><span class="nav-number">1.1.1.</span> <span class="nav-text">触发BFC的条件：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#需要注意的点是：display-table-本身并不会创建BFC，但是它会产生匿名框（块级元素A包含其他块级元素a1时，若此时在a1前插入文本，就会形成块级匿名框，匿名框不可见，且不能设置样式，匿名框只是用来维护dom树结构的），而匿名框中的display-table-cell可以创建新的BFC，换句话说，触发块级格式化上下文的是匿名框，而不是display-table，所以display-table-和-display-table-cell创建的BFC效果是不一样的。"><span class="nav-number">1.1.2.</span> <span class="nav-text">需要注意的点是：display:table 本身并不会创建BFC，但是它会产生匿名框（块级元素A包含其他块级元素a1时，若此时在a1前插入文本，就会形成块级匿名框，匿名框不可见，且不能设置样式，匿名框只是用来维护dom树结构的），而匿名框中的display:table-cell可以创建新的BFC，换句话说，触发块级格式化上下文的是匿名框，而不是display:table，所以display:table 和 display:table-cell创建的BFC效果是不一样的。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#BFC的特性"><span class="nav-number">1.1.3.</span> <span class="nav-text">BFC的特性</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-清除浮动与闭合浮动的区别"><span class="nav-number">1.2.</span> <span class="nav-text">2.清除浮动与闭合浮动的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#清除浮动：对应的css属性是clear-left-right-both-none"><span class="nav-number">1.2.1.</span> <span class="nav-text">清除浮动：对应的css属性是clear:left|right|both|none;</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#闭合浮动：使浮动元素闭合从而减少浮动带来的影响，一般来说目的是为了解决父元素高度塌陷的问题。"><span class="nav-number">1.2.2.</span> <span class="nav-text">闭合浮动：使浮动元素闭合从而减少浮动带来的影响，一般来说目的是为了解决父元素高度塌陷的问题。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-具体实现（只提供两个优秀方案，都与伪元素-after相关）"><span class="nav-number">2.</span> <span class="nav-text">2.具体实现（只提供两个优秀方案，都与伪元素:after相关）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#考点7-浏览器页面加载、性能优化和安全性"><span class="nav-number">1.</span> <span class="nav-text">考点7:浏览器页面加载、性能优化和安全性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-从输入url到得到html的详细过程："><span class="nav-number">1.1.</span> <span class="nav-text">1. 从输入url到得到html的详细过程：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-window-onload-和-DOMContentLoaded的区别？"><span class="nav-number">1.2.</span> <span class="nav-text">2. window.onload 和 DOMContentLoaded的区别？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-页面加载的优化？"><span class="nav-number">1.3.</span> <span class="nav-text">3. 页面加载的优化？</span></a></li></ol></li></ol></div>
             
 
           </div>
