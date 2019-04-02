@@ -273,6 +273,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="zhaolong.online/2019/04/02/css清除浮动的终极奥义/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZHAO LONG">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="赵龙的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/02/css清除浮动的终极奥义/" itemprop="url">css清除浮动的终极奥义</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-02T11:28:35+08:00">
+                2019-04-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/04/02/css清除浮动的终极奥义/" class="leancloud_visitors" data-flag-title="css清除浮动的终极奥义">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1.基础知识"></a>1.基础知识</h4><h5 id="1-BFC（Block-Formating-Context-块格式化上下文）"><a href="#1-BFC（Block-Formating-Context-块格式化上下文）" class="headerlink" title="1.BFC（Block Formating Context,块格式化上下文）"></a>1.BFC（Block Formating Context,块格式化上下文）</h5><h6 id="触发BFC的条件："><a href="#触发BFC的条件：" class="headerlink" title="触发BFC的条件："></a>触发BFC的条件：</h6><ol>
+<li>float除了none以外的值；</li>
+<li>overflow除了visible以外的值；</li>
+<li>display（table-cell,table-caption,inline-block）</li>
+<li>postion(absolute,fixed);</li>
+<li>fieldset元素</li>
+</ol>
+<h6 id="需要注意的点是：display-table-本身并不会创建BFC，但是它会产生匿名框（块级元素A包含其他块级元素a1时，若此时在a1前插入文本，就会形成块级匿名框，匿名框不可见，且不能设置样式，匿名框只是用来维护dom树结构的），而匿名框中的display-table-cell可以创建新的BFC，换句话说，触发块级格式化上下文的是匿名框，而不是display-table，所以display-table-和-display-table-cell创建的BFC效果是不一样的。"><a href="#需要注意的点是：display-table-本身并不会创建BFC，但是它会产生匿名框（块级元素A包含其他块级元素a1时，若此时在a1前插入文本，就会形成块级匿名框，匿名框不可见，且不能设置样式，匿名框只是用来维护dom树结构的），而匿名框中的display-table-cell可以创建新的BFC，换句话说，触发块级格式化上下文的是匿名框，而不是display-table，所以display-table-和-display-table-cell创建的BFC效果是不一样的。" class="headerlink" title="需要注意的点是：display:table 本身并不会创建BFC，但是它会产生匿名框（块级元素A包含其他块级元素a1时，若此时在a1前插入文本，就会形成块级匿名框，匿名框不可见，且不能设置样式，匿名框只是用来维护dom树结构的），而匿名框中的display:table-cell可以创建新的BFC，换句话说，触发块级格式化上下文的是匿名框，而不是display:table，所以display:table 和 display:table-cell创建的BFC效果是不一样的。"></a>需要注意的点是：display:table 本身并不会创建BFC，但是它会产生匿名框（块级元素A包含其他块级元素a1时，若此时在a1前插入文本，就会形成块级匿名框，匿名框不可见，且不能设置样式，匿名框只是用来维护dom树结构的），而匿名框中的display:table-cell可以创建新的BFC，换句话说，触发块级格式化上下文的是匿名框，而不是display:table，所以display:table 和 display:table-cell创建的BFC效果是不一样的。</h6><h6 id="BFC的特性"><a href="#BFC的特性" class="headerlink" title="BFC的特性"></a>BFC的特性</h6><ol>
+<li>BFC会阻止外边距叠加：<br>当两个相邻的块元素在同一个BFC中时，它们之间垂直方向的外边距会发生叠加。</li>
+<li>BFC不会重叠浮动元素：<br>根据规定，一个BFC的边框不能和它里面的元素的外边距，这就意味着浏览器将会给BFC创建隐式的外边距来阻止它和浮动元素的外边距叠加。因此，想给一个挨着浮动的BFC添加负的外边距将 <strong>不会起作用</strong>。</li>
+<li>BFC通常可以包含浮动。</li>
+</ol>
+<h5 id="2-清除浮动与闭合浮动的区别"><a href="#2-清除浮动与闭合浮动的区别" class="headerlink" title="2.清除浮动与闭合浮动的区别"></a>2.清除浮动与闭合浮动的区别</h5><h6 id="清除浮动：对应的css属性是clear-left-right-both-none"><a href="#清除浮动：对应的css属性是clear-left-right-both-none" class="headerlink" title="清除浮动：对应的css属性是clear:left|right|both|none;"></a>清除浮动：对应的css属性是clear:left|right|both|none;</h6><h6 id="闭合浮动：使浮动元素闭合从而减少浮动带来的影响，一般来说目的是为了解决父元素高度塌陷的问题。"><a href="#闭合浮动：使浮动元素闭合从而减少浮动带来的影响，一般来说目的是为了解决父元素高度塌陷的问题。" class="headerlink" title="闭合浮动：使浮动元素闭合从而减少浮动带来的影响，一般来说目的是为了解决父元素高度塌陷的问题。"></a>闭合浮动：使浮动元素闭合从而减少浮动带来的影响，一般来说目的是为了解决父元素高度塌陷的问题。</h6><h4 id="2-具体实现（只提供两个优秀方案，都与伪元素-after相关）"><a href="#2-具体实现（只提供两个优秀方案，都与伪元素-after相关）" class="headerlink" title="2.具体实现（只提供两个优秀方案，都与伪元素:after相关）"></a>2.具体实现（只提供两个优秀方案，都与伪元素:after相关）</h4><ol>
+<li>：after伪元素闭合浮动<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>:<span class="string">'.'</span>;</span><br><span class="line">  <span class="attribute">display</span>:block;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">0</span>;</span><br><span class="line">  <span class="attribute">visibility</span>:hidden;</span><br><span class="line">  <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*兼容ie*/</span></span><br><span class="line">.clearfix&#123;*zoom:1;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>display:block 使生成的元素以块级元素显示，占满剩余空间<br>height:0 避免生成内容破坏原有布局的高度；<br>visibility:hidden 使生成的内容不可见，并允许可能被生成元素盖住的内容可以进行点击和交互；<br>content：’.’ 可以是其他内容，但最好是有内容，因为到firefox7.0版本为止若内容为空，火狐浏览器仍然会产生额外的空隙。</p>
+<p>2.同时操作:before和:after<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:before</span>,<span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>:<span class="string">''</span>;</span><br><span class="line">  <span class="attribute">display</span>:table;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">  <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix&#123;*zoom:1&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这种方法不存在上面提到的火狐浏览器空隙的问题，而且:before的加入是用来处理margin边距重叠问题的：我们上面提到过，内部元素float会创建BFC，div1和div2的外边距叠加问题，如果你想解决这个问题，可以加入:before，否则只需要after就够了。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="zhaolong.online/2019/04/01/JS面试题4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1491,7 +1644,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1504,7 +1657,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

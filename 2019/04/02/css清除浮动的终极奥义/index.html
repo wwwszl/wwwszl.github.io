@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="CSS,">
 
 
 
@@ -83,17 +83,18 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="1.基础知识1.BFC（Block Formating Context,块格式化上下文）触发BFC的条件： float除了none以外的值； overflow除了visible以外的值； display（table-cell,table-caption,inline-block） postion(absolute,fixed); fieldset元素  需要注意的点是：display:table">
+<meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="zhaolong.online/2019/03/30/hello-world/index.html">
+<meta property="og:title" content="css清除浮动的终极奥义">
+<meta property="og:url" content="zhaolong.online/2019/04/02/css清除浮动的终极奥义/index.html">
 <meta property="og:site_name" content="赵龙的个人博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="1.基础知识1.BFC（Block Formating Context,块格式化上下文）触发BFC的条件： float除了none以外的值； overflow除了visible以外的值； display（table-cell,table-caption,inline-block） postion(absolute,fixed); fieldset元素  需要注意的点是：display:table">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-30T10:22:29.899Z">
+<meta property="og:updated_time" content="2019-04-02T08:45:05.221Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="css清除浮动的终极奥义">
+<meta name="twitter:description" content="1.基础知识1.BFC（Block Formating Context,块格式化上下文）触发BFC的条件： float除了none以外的值； overflow除了visible以外的值； display（table-cell,table-caption,inline-block） postion(absolute,fixed); fieldset元素  需要注意的点是：display:table">
 
 
 
@@ -123,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="zhaolong.online/2019/03/30/hello-world/">
+  <link rel="canonical" href="zhaolong.online/2019/04/02/css清除浮动的终极奥义/">
 
 
 
 
 
-  <title>Hello World | 赵龙的个人博客</title>
+  <title>css清除浮动的终极奥义 | 赵龙的个人博客</title>
   
 
 
@@ -276,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="zhaolong.online/2019/03/30/hello-world/">
+    <link itemprop="mainEntityOfPage" href="zhaolong.online/2019/04/02/css清除浮动的终极奥义/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZHAO LONG">
@@ -293,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">css清除浮动的终极奥义</h1>
         
 
         <div class="post-meta">
@@ -305,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-30T18:22:29+08:00">
-                2019-03-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-02T11:28:35+08:00">
+                2019-04-02
               </time>
             
 
@@ -323,7 +324,7 @@
 
           
           
-             <span id="/2019/03/30/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+             <span id="/2019/04/02/css清除浮动的终极奥义/" class="leancloud_visitors" data-flag-title="css清除浮动的终极奥义">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -354,15 +355,25 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h4 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1.基础知识"></a>1.基础知识</h4><h5 id="1-BFC（Block-Formating-Context-块格式化上下文）"><a href="#1-BFC（Block-Formating-Context-块格式化上下文）" class="headerlink" title="1.BFC（Block Formating Context,块格式化上下文）"></a>1.BFC（Block Formating Context,块格式化上下文）</h5><h6 id="触发BFC的条件："><a href="#触发BFC的条件：" class="headerlink" title="触发BFC的条件："></a>触发BFC的条件：</h6><ol>
+<li>float除了none以外的值；</li>
+<li>overflow除了visible以外的值；</li>
+<li>display（table-cell,table-caption,inline-block）</li>
+<li>postion(absolute,fixed);</li>
+<li>fieldset元素</li>
+</ol>
+<h6 id="需要注意的点是：display-table-本身并不会创建BFC，但是它会产生匿名框（块级元素A包含其他块级元素a1时，若此时在a1前插入文本，就会形成块级匿名框，匿名框不可见，且不能设置样式，匿名框只是用来维护dom树结构的），而匿名框中的display-table-cell可以创建新的BFC，换句话说，触发块级格式化上下文的是匿名框，而不是display-table，所以display-table-和-display-table-cell创建的BFC效果是不一样的。"><a href="#需要注意的点是：display-table-本身并不会创建BFC，但是它会产生匿名框（块级元素A包含其他块级元素a1时，若此时在a1前插入文本，就会形成块级匿名框，匿名框不可见，且不能设置样式，匿名框只是用来维护dom树结构的），而匿名框中的display-table-cell可以创建新的BFC，换句话说，触发块级格式化上下文的是匿名框，而不是display-table，所以display-table-和-display-table-cell创建的BFC效果是不一样的。" class="headerlink" title="需要注意的点是：display:table 本身并不会创建BFC，但是它会产生匿名框（块级元素A包含其他块级元素a1时，若此时在a1前插入文本，就会形成块级匿名框，匿名框不可见，且不能设置样式，匿名框只是用来维护dom树结构的），而匿名框中的display:table-cell可以创建新的BFC，换句话说，触发块级格式化上下文的是匿名框，而不是display:table，所以display:table 和 display:table-cell创建的BFC效果是不一样的。"></a>需要注意的点是：display:table 本身并不会创建BFC，但是它会产生匿名框（块级元素A包含其他块级元素a1时，若此时在a1前插入文本，就会形成块级匿名框，匿名框不可见，且不能设置样式，匿名框只是用来维护dom树结构的），而匿名框中的display:table-cell可以创建新的BFC，换句话说，触发块级格式化上下文的是匿名框，而不是display:table，所以display:table 和 display:table-cell创建的BFC效果是不一样的。</h6><h6 id="BFC的特性"><a href="#BFC的特性" class="headerlink" title="BFC的特性"></a>BFC的特性</h6><ol>
+<li>BFC会阻止外边距叠加：<br>当两个相邻的块元素在同一个BFC中时，它们之间垂直方向的外边距会发生叠加。</li>
+<li>BFC不会重叠浮动元素：<br>根据规定，一个BFC的边框不能和它里面的元素的外边距，这就意味着浏览器将会给BFC创建隐式的外边距来阻止它和浮动元素的外边距叠加。因此，想给一个挨着浮动的BFC添加负的外边距将 <strong>不会起作用</strong>。</li>
+<li>BFC通常可以包含浮动。</li>
+</ol>
+<h5 id="2-清除浮动与闭合浮动的区别"><a href="#2-清除浮动与闭合浮动的区别" class="headerlink" title="2.清除浮动与闭合浮动的区别"></a>2.清除浮动与闭合浮动的区别</h5><h6 id="清除浮动：对应的css属性是clear-left-right-both-none"><a href="#清除浮动：对应的css属性是clear-left-right-both-none" class="headerlink" title="清除浮动：对应的css属性是clear:left|right|both|none;"></a>清除浮动：对应的css属性是clear:left|right|both|none;</h6><h6 id="闭合浮动：使浮动元素闭合从而减少浮动带来的影响，一般来说目的是为了解决父元素高度塌陷的问题。"><a href="#闭合浮动：使浮动元素闭合从而减少浮动带来的影响，一般来说目的是为了解决父元素高度塌陷的问题。" class="headerlink" title="闭合浮动：使浮动元素闭合从而减少浮动带来的影响，一般来说目的是为了解决父元素高度塌陷的问题。"></a>闭合浮动：使浮动元素闭合从而减少浮动带来的影响，一般来说目的是为了解决父元素高度塌陷的问题。</h6><h4 id="2-具体实现（只提供两个优秀方案，都与伪元素-after相关）"><a href="#2-具体实现（只提供两个优秀方案，都与伪元素-after相关）" class="headerlink" title="2.具体实现（只提供两个优秀方案，都与伪元素:after相关）"></a>2.具体实现（只提供两个优秀方案，都与伪元素:after相关）</h4><ol>
+<li>：after伪元素闭合浮动<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>:<span class="string">'.'</span>;</span><br><span class="line">  <span class="attribute">display</span>:block;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">0</span>;</span><br><span class="line">  <span class="attribute">visibility</span>:hidden;</span><br><span class="line">  <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*兼容ie*/</span></span><br><span class="line">.clearfix&#123;*zoom:1;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>display:block 使生成的元素以块级元素显示，占满剩余空间<br>height:0 避免生成内容破坏原有布局的高度；<br>visibility:hidden 使生成的内容不可见，并允许可能被生成元素盖住的内容可以进行点击和交互；<br>content：’.’ 可以是其他内容，但最好是有内容，因为到firefox7.0版本为止若内容为空，火狐浏览器仍然会产生额外的空隙。</p>
+<p>2.同时操作:before和:after<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:before</span>,<span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>:<span class="string">''</span>;</span><br><span class="line">  <span class="attribute">display</span>:table;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">  <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix&#123;*zoom:1&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这种方法不存在上面提到的火狐浏览器空隙的问题，而且:before的加入是用来处理margin边距重叠问题的：我们上面提到过，内部元素float会创建BFC，div1和div2的外边距叠加问题，如果你想解决这个问题，可以加入:before，否则只需要after就够了。</p>
 
       
     </div>
@@ -391,6 +402,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
+          
+        </div>
+      
 
       
       
@@ -415,15 +432,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/04/01/JS面试题4/" rel="next" title="JS面试题4">
+                <i class="fa fa-chevron-left"></i> JS面试题4
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/30/JS面试题/" rel="prev" title="变量类型和计算">
-                变量类型和计算 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -580,7 +597,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-基础知识"><span class="nav-number">1.</span> <span class="nav-text">1.基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-BFC（Block-Formating-Context-块格式化上下文）"><span class="nav-number">1.1.</span> <span class="nav-text">1.BFC（Block Formating Context,块格式化上下文）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#触发BFC的条件："><span class="nav-number">1.1.1.</span> <span class="nav-text">触发BFC的条件：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#需要注意的点是：display-table-本身并不会创建BFC，但是它会产生匿名框（块级元素A包含其他块级元素a1时，若此时在a1前插入文本，就会形成块级匿名框，匿名框不可见，且不能设置样式，匿名框只是用来维护dom树结构的），而匿名框中的display-table-cell可以创建新的BFC，换句话说，触发块级格式化上下文的是匿名框，而不是display-table，所以display-table-和-display-table-cell创建的BFC效果是不一样的。"><span class="nav-number">1.1.2.</span> <span class="nav-text">需要注意的点是：display:table 本身并不会创建BFC，但是它会产生匿名框（块级元素A包含其他块级元素a1时，若此时在a1前插入文本，就会形成块级匿名框，匿名框不可见，且不能设置样式，匿名框只是用来维护dom树结构的），而匿名框中的display:table-cell可以创建新的BFC，换句话说，触发块级格式化上下文的是匿名框，而不是display:table，所以display:table 和 display:table-cell创建的BFC效果是不一样的。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#BFC的特性"><span class="nav-number">1.1.3.</span> <span class="nav-text">BFC的特性</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-清除浮动与闭合浮动的区别"><span class="nav-number">1.2.</span> <span class="nav-text">2.清除浮动与闭合浮动的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#清除浮动：对应的css属性是clear-left-right-both-none"><span class="nav-number">1.2.1.</span> <span class="nav-text">清除浮动：对应的css属性是clear:left|right|both|none;</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#闭合浮动：使浮动元素闭合从而减少浮动带来的影响，一般来说目的是为了解决父元素高度塌陷的问题。"><span class="nav-number">1.2.2.</span> <span class="nav-text">闭合浮动：使浮动元素闭合从而减少浮动带来的影响，一般来说目的是为了解决父元素高度塌陷的问题。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-具体实现（只提供两个优秀方案，都与伪元素-after相关）"><span class="nav-number">2.</span> <span class="nav-text">2.具体实现（只提供两个优秀方案，都与伪元素:after相关）</span></a></li></ol></div>
             
 
           </div>
