@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="###考点一: 变量类型和计算 ####1. JS使用typeof能得到哪些类型？   答案：(均为字符串格式)undefined, string, number, boolean, object, function(ES6中的Symbol返回值是function，null返回的是 object) ####2. 何时使用===何时使用==:   答案：建议都使用 ===，考虑到以下因素：1.一致性">
+<meta name="description" content="###考点一: 变量类型和计算 ####1. JS使用typeof能得到哪些类型？   答案：(均为字符串格式)undefined, string, number, boolean, object, function,symbol(ES6),bigint(null返回的是 object) ####2. 何时使用===何时使用==:   答案：建议都使用 ===，考虑到以下因素：1.一致性；2.简单">
 <meta name="keywords" content="JS面试题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="变量类型和计算">
 <meta property="og:url" content="zhaolong.online/2019/03/30/JS面试题/index.html">
 <meta property="og:site_name" content="赵龙的个人博客">
-<meta property="og:description" content="###考点一: 变量类型和计算 ####1. JS使用typeof能得到哪些类型？   答案：(均为字符串格式)undefined, string, number, boolean, object, function(ES6中的Symbol返回值是function，null返回的是 object) ####2. 何时使用===何时使用==:   答案：建议都使用 ===，考虑到以下因素：1.一致性">
+<meta property="og:description" content="###考点一: 变量类型和计算 ####1. JS使用typeof能得到哪些类型？   答案：(均为字符串格式)undefined, string, number, boolean, object, function,symbol(ES6),bigint(null返回的是 object) ####2. 何时使用===何时使用==:   答案：建议都使用 ===，考虑到以下因素：1.一致性；2.简单">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-09T13:56:36.200Z">
+<meta property="og:updated_time" content="2019-04-13T04:01:07.344Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="变量类型和计算">
-<meta name="twitter:description" content="###考点一: 变量类型和计算 ####1. JS使用typeof能得到哪些类型？   答案：(均为字符串格式)undefined, string, number, boolean, object, function(ES6中的Symbol返回值是function，null返回的是 object) ####2. 何时使用===何时使用==:   答案：建议都使用 ===，考虑到以下因素：1.一致性">
+<meta name="twitter:description" content="###考点一: 变量类型和计算 ####1. JS使用typeof能得到哪些类型？   答案：(均为字符串格式)undefined, string, number, boolean, object, function,symbol(ES6),bigint(null返回的是 object) ####2. 何时使用===何时使用==:   答案：建议都使用 ===，考虑到以下因素：1.一致性；2.简单">
 
 
 
@@ -357,7 +357,7 @@
       
         <p>###考点一: 变量类型和计算</p>
 <p>####1. JS使用typeof能得到哪些类型？</p>
-<p>  答案：(均为字符串格式)undefined, string, number, boolean, object, function(ES6中的Symbol返回值是function，null返回的是 object)</p>
+<p>  答案：(均为字符串格式)undefined, string, number, boolean, object, function,symbol(ES6),bigint(null返回的是 object)</p>
 <p>####2. 何时使用===何时使用==:</p>
 <p>  答案：建议都使用 ===，考虑到以下因素：1.一致性；2.简单和性能：===是最简单的操作符，因为它不用进行类型转换，而==会进行强制类型转换。而可以使用 == 的两种场景：</p>
 <p>  #####1.判断对象的属性是否存在:</p>
@@ -370,15 +370,24 @@
 <li>if()返回false的情况：0, null, undefined,NaN,空字符串，false；其他均返回true,空对象和空数组，也是返回true的;</li>
 <li>你知道console.log(1===1===1)的值是什么吗？ false. 理由：1===1 为true， 而true===1不成立，所以返回为false.</li>
 </ol>
-<p>####3. JS中有哪些内置函数?</p>
-<p>  答案：Number, String,Object，Boolean，Function，Array，Date，RegExp，Error，Symbol（ES6)<br>    【注：Symbol函数前不能使用new命令，否则会报错，Symbol函数可以接受一个字符串作为参数，表示对Symbol实例的描述】;</p>
-<p>####4. JS变量按照存储方式区分为哪些类型，并描述其特点？</p>
-<p>  答案：1.️ 值类型，值类型存储的是值；<br>  2.️ 引用类型 ，存储的是地址，赋值之后是把原变量的引用地址赋值给新变量。</p>
-<p>5.如何理解JSON？</p>
-<p>  答案：JSON就是一个js对象，有两个方法:</p>
+<h4 id="3-JS中有哪些内置函数"><a href="#3-JS中有哪些内置函数" class="headerlink" title="3. JS中有哪些内置函数?"></a>3. JS中有哪些内置函数?</h4><p>  答案：Number, String,Object，Boolean，Function，Array，Date，RegExp，Error，Symbol（ES6)<br>    【注：Symbol函数前不能使用new命令，否则会报错，Symbol函数可以接受一个字符串作为参数，表示对Symbol实例的描述】;</p>
+<h4 id="4-JS变量按照存储方式区分为哪些类型，并描述其特点？"><a href="#4-JS变量按照存储方式区分为哪些类型，并描述其特点？" class="headerlink" title="4. JS变量按照存储方式区分为哪些类型，并描述其特点？"></a>4. JS变量按照存储方式区分为哪些类型，并描述其特点？</h4><p>  答案：1.️ 值类型，值类型存储的是值；<br>  2.️ 引用类型 ，存储的是地址，赋值之后是把原变量的引用地址赋值给新变量。</p>
+<h4 id="5-如何理解JSON？"><a href="#5-如何理解JSON？" class="headerlink" title="5.如何理解JSON？"></a>5.如何理解JSON？</h4><p>  答案：JSON就是一个js对象，有两个方法:</p>
 <pre><code>1. JSON.stringify({‘a’:10,’b’:20})
 2. JSON.parse（’{‘a’:10,’b’:20}’),JSON.parse 不兼容，可以使用eval来转化。
-</code></pre>
+</code></pre><ol start="6">
+<li><p>new一个对象会发生什么？</p>
+<p>答案： 1. 构造一个新对象；</p>
+<pre><code>2. 将构造函数的作用域赋给新对象（this）；
+3. 执行构造函数中的代码（为新对象添加属性）；
+4. 返回该对象。
+</code></pre><p>用原生JS实现new:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">New</span>(<span class="params">f</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">//返回一个函数</span></span><br><span class="line">    <span class="keyword">var</span> o = &#123;<span class="string">'__proto__'</span>:f.prototype&#125;;</span><br><span class="line">    f.apply(o,<span class="built_in">arguments</span>);<span class="comment">//继承父类的属性</span></span><br><span class="line">    <span class="keyword">return</span> o</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>举个栗子:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//new一个Person的实例p1</span></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">'Tom'</span>,<span class="number">18</span>);</span><br><span class="line"><span class="comment">//此时p1包含name，age属性，同时p1的__proto__指向Person的prototype</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
       
     </div>
     
@@ -505,8 +514,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -521,7 +539,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -534,7 +552,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -586,6 +604,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-JS中有哪些内置函数"><span class="nav-number">1.</span> <span class="nav-text">3. JS中有哪些内置函数?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-JS变量按照存储方式区分为哪些类型，并描述其特点？"><span class="nav-number">2.</span> <span class="nav-text">4. JS变量按照存储方式区分为哪些类型，并描述其特点？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-如何理解JSON？"><span class="nav-number">3.</span> <span class="nav-text">5.如何理解JSON？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
